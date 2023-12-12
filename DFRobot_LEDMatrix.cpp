@@ -50,7 +50,7 @@ void DFRobot_LEDMatrix::cleanDisPlay(void){
   }
 }
 
-void DFRobot_LEDMatrix::disPlay(const char* ch,uint8_t time){
+void DFRobot_LEDMatrix::disPlay(const char* ch,uint16_t time){
   uint8_t len = strlen(ch);
   uint8_t i,j,k,f;
   uint8_t ascill = ch[0];
@@ -62,8 +62,8 @@ void DFRobot_LEDMatrix::disPlay(const char* ch,uint8_t time){
     getBuf(ascill,charBufB);//获取第二个以及第二个数据
     for(j = 0;j< 10;j++){//数据位移数量
       for(k = 1;k < 9;k++){//显示数据
-        charBufA[k-1] <<=1;
         sendData(k,charBufA[k-1]);//发送数据
+        charBufA[k-1] <<=1;
       }
       if(j > 2){
         for(f = 0; f < 8; f++){//在尾巴追加下一个数据

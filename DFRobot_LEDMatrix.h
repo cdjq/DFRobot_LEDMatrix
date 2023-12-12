@@ -101,7 +101,7 @@ public:
      * @param ch 需要显示的字符串
      * @param time 滚动速度 
     */
-    void disPlay(const char* ch,uint8_t time);
+    void disPlay(const char* ch,uint16_t time);
     /**
      * @fn disPlay 
      * @brief 显示图标
